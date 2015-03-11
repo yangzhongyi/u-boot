@@ -1,0 +1,243 @@
+for dir in tools examples post post/cpu ; do make -C $dir _depend ; done
+make[1]: Entering directory `/work/projects/s3c6410/u-boot-1.1.6_smdk6410/tools'
+make[1]: Nothing to be done for `_depend'.
+make[1]: Leaving directory `/work/projects/s3c6410/u-boot-1.1.6_smdk6410/tools'
+make[1]: Entering directory `/work/projects/s3c6410/u-boot-1.1.6_smdk6410/examples'
+make[1]: Nothing to be done for `_depend'.
+make[1]: Leaving directory `/work/projects/s3c6410/u-boot-1.1.6_smdk6410/examples'
+make[1]: Entering directory `/work/projects/s3c6410/u-boot-1.1.6_smdk6410/post'
+make[1]: Nothing to be done for `_depend'.
+make[1]: Leaving directory `/work/projects/s3c6410/u-boot-1.1.6_smdk6410/post'
+make[1]: Entering directory `/work/projects/s3c6410/u-boot-1.1.6_smdk6410/post/cpu'
+make[1]: Nothing to be done for `_depend'.
+make[1]: Leaving directory `/work/projects/s3c6410/u-boot-1.1.6_smdk6410/post/cpu'
+make -C tools all
+make[1]: Entering directory `/work/projects/s3c6410/u-boot-1.1.6_smdk6410/tools'
+make[1]: Leaving directory `/work/projects/s3c6410/u-boot-1.1.6_smdk6410/tools'
+make -C examples all
+make[1]: Entering directory `/work/projects/s3c6410/u-boot-1.1.6_smdk6410/examples'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/work/projects/s3c6410/u-boot-1.1.6_smdk6410/examples'
+make -C post all
+make[1]: Entering directory `/work/projects/s3c6410/u-boot-1.1.6_smdk6410/post'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/work/projects/s3c6410/u-boot-1.1.6_smdk6410/post'
+make -C post/cpu all
+make[1]: Entering directory `/work/projects/s3c6410/u-boot-1.1.6_smdk6410/post/cpu'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/work/projects/s3c6410/u-boot-1.1.6_smdk6410/post/cpu'
+make -C lib_generic/
+make[1]: Entering directory `/work/projects/s3c6410/u-boot-1.1.6_smdk6410/lib_generic'
+make[1]: `libgeneric.a' is up to date.
+make[1]: Leaving directory `/work/projects/s3c6410/u-boot-1.1.6_smdk6410/lib_generic'
+make -C board/samsung/smdk6410/
+make[1]: Entering directory `/work/projects/s3c6410/u-boot-1.1.6_smdk6410/board/samsung/smdk6410'
+arm-linux-gcc  -D__ASSEMBLY__ -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x57e00000  -I/work/projects/s3c6410/u-boot-1.1.6_smdk6410/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -c -o lowlevel_init.o lowlevel_init.S
+arm-linux-ar crv libsmdk6410.a lowlevel_init.o smdk6410.o flash.o
+r - lowlevel_init.o
+r - smdk6410.o
+r - flash.o
+make[1]: Leaving directory `/work/projects/s3c6410/u-boot-1.1.6_smdk6410/board/samsung/smdk6410'
+make -C cpu/s3c64xx/
+make[1]: Entering directory `/work/projects/s3c6410/u-boot-1.1.6_smdk6410/cpu/s3c64xx'
+arm-linux-gcc  -D__ASSEMBLY__ -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x57e00000  -I/work/projects/s3c6410/u-boot-1.1.6_smdk6410/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -c -o start.o start.S
+make[1]: Leaving directory `/work/projects/s3c6410/u-boot-1.1.6_smdk6410/cpu/s3c64xx'
+make -C cpu/s3c64xx/s3c6410/
+make[1]: Entering directory `/work/projects/s3c6410/u-boot-1.1.6_smdk6410/cpu/s3c64xx/s3c6410'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/work/projects/s3c6410/u-boot-1.1.6_smdk6410/cpu/s3c64xx/s3c6410'
+make -C lib_arm/
+make[1]: Entering directory `/work/projects/s3c6410/u-boot-1.1.6_smdk6410/lib_arm'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x57e00000  -I/work/projects/s3c6410/u-boot-1.1.6_smdk6410/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o board.o board.c
+arm-linux-ar crv libarm.a _ashldi3.o _ashrdi3.o _divsi3.o _modsi3.o _udivsi3.o _umodsi3.o armlinux.o board.o cache.o div0.o
+r - _ashldi3.o
+r - _ashrdi3.o
+r - _divsi3.o
+r - _modsi3.o
+r - _udivsi3.o
+r - _umodsi3.o
+r - armlinux.o
+r - board.o
+r - cache.o
+r - div0.o
+make[1]: Leaving directory `/work/projects/s3c6410/u-boot-1.1.6_smdk6410/lib_arm'
+make -C fs/cramfs/
+make[1]: Entering directory `/work/projects/s3c6410/u-boot-1.1.6_smdk6410/fs/cramfs'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/work/projects/s3c6410/u-boot-1.1.6_smdk6410/fs/cramfs'
+make -C fs/fat/
+make[1]: Entering directory `/work/projects/s3c6410/u-boot-1.1.6_smdk6410/fs/fat'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/work/projects/s3c6410/u-boot-1.1.6_smdk6410/fs/fat'
+make -C fs/fdos/
+make[1]: Entering directory `/work/projects/s3c6410/u-boot-1.1.6_smdk6410/fs/fdos'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/work/projects/s3c6410/u-boot-1.1.6_smdk6410/fs/fdos'
+make -C fs/jffs2/
+make[1]: Entering directory `/work/projects/s3c6410/u-boot-1.1.6_smdk6410/fs/jffs2'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/work/projects/s3c6410/u-boot-1.1.6_smdk6410/fs/jffs2'
+make -C fs/reiserfs/
+make[1]: Entering directory `/work/projects/s3c6410/u-boot-1.1.6_smdk6410/fs/reiserfs'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/work/projects/s3c6410/u-boot-1.1.6_smdk6410/fs/reiserfs'
+make -C fs/ext2/
+make[1]: Entering directory `/work/projects/s3c6410/u-boot-1.1.6_smdk6410/fs/ext2'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/work/projects/s3c6410/u-boot-1.1.6_smdk6410/fs/ext2'
+make -C net/
+make[1]: Entering directory `/work/projects/s3c6410/u-boot-1.1.6_smdk6410/net'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/work/projects/s3c6410/u-boot-1.1.6_smdk6410/net'
+make -C disk/
+make[1]: Entering directory `/work/projects/s3c6410/u-boot-1.1.6_smdk6410/disk'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/work/projects/s3c6410/u-boot-1.1.6_smdk6410/disk'
+make -C rtc/
+make[1]: Entering directory `/work/projects/s3c6410/u-boot-1.1.6_smdk6410/rtc'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/work/projects/s3c6410/u-boot-1.1.6_smdk6410/rtc'
+make -C dtt/
+make[1]: Entering directory `/work/projects/s3c6410/u-boot-1.1.6_smdk6410/dtt'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/work/projects/s3c6410/u-boot-1.1.6_smdk6410/dtt'
+make -C drivers/
+make[1]: Entering directory `/work/projects/s3c6410/u-boot-1.1.6_smdk6410/drivers'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/work/projects/s3c6410/u-boot-1.1.6_smdk6410/drivers'
+make -C drivers/nand/
+make[1]: Entering directory `/work/projects/s3c6410/u-boot-1.1.6_smdk6410/drivers/nand'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/work/projects/s3c6410/u-boot-1.1.6_smdk6410/drivers/nand'
+make -C drivers/nand_legacy/
+make[1]: Entering directory `/work/projects/s3c6410/u-boot-1.1.6_smdk6410/drivers/nand_legacy'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/work/projects/s3c6410/u-boot-1.1.6_smdk6410/drivers/nand_legacy'
+make -C drivers/onenand/
+make[1]: Entering directory `/work/projects/s3c6410/u-boot-1.1.6_smdk6410/drivers/onenand'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/work/projects/s3c6410/u-boot-1.1.6_smdk6410/drivers/onenand'
+make -C drivers/sk98lin/
+make[1]: Entering directory `/work/projects/s3c6410/u-boot-1.1.6_smdk6410/drivers/sk98lin'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/work/projects/s3c6410/u-boot-1.1.6_smdk6410/drivers/sk98lin'
+make -C post/
+make[1]: Entering directory `/work/projects/s3c6410/u-boot-1.1.6_smdk6410/post'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/work/projects/s3c6410/u-boot-1.1.6_smdk6410/post'
+make -C post/cpu/
+make[1]: Entering directory `/work/projects/s3c6410/u-boot-1.1.6_smdk6410/post/cpu'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/work/projects/s3c6410/u-boot-1.1.6_smdk6410/post/cpu'
+make -C common/
+make[1]: Entering directory `/work/projects/s3c6410/u-boot-1.1.6_smdk6410/common'
+make[1]: Leaving directory `/work/projects/s3c6410/u-boot-1.1.6_smdk6410/common'
+make[1]: Entering directory `/work/projects/s3c6410/u-boot-1.1.6_smdk6410/common'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x57e00000  -I/work/projects/s3c6410/u-boot-1.1.6_smdk6410/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o main.o main.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x57e00000  -I/work/projects/s3c6410/u-boot-1.1.6_smdk6410/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o lcd.o lcd.c
+arm-linux-ar crv libcommon.a main.o ACEX1K.o altera.o bedbug.o circbuf.o cmd_ace.o cmd_autoscript.o cmd_bdinfo.o cmd_bedbug.o cmd_bmp.o cmd_boot.o cmd_bootm.o cmd_cache.o cmd_console.o cmd_date.o cmd_dcr.o cmd_diag.o cmd_display.o cmd_doc.o cmd_dtt.o cmd_eeprom.o cmd_elf.o cmd_ext2.o cmd_fat.o cmd_fdc.o cmd_fdos.o cmd_flash.o cmd_fpga.o cmd_i2c.o cmd_ide.o cmd_immap.o cmd_itest.o cmd_jffs2.o cmd_load.o cmd_log.o cmd_mem.o cmd_mii.o cmd_misc.o cmd_mmc.o cmd_nand.o cmd_net.o cmd_nvedit.o cmd_pci.o cmd_pcmcia.o cmd_portio.o cmd_reginfo.o cmd_reiser.o cmd_scsi.o cmd_spi.o cmd_universe.o cmd_usb.o cmd_vfd.o command.o console.o cyclon2.o devices.o dlmalloc.o docecc.o environment.o env_common.o env_nand.o env_dataflash.o env_flash.o env_eeprom.o env_nvram.o env_nowhere.o env_movi.o env_onenand.o exports.o flash.o fpga.o ft_build.o hush.o kgdb.o lcd.o lists.o lynxkdi.o memsize.o miiphybb.o miiphyutil.o s_record.o serial.o soft_i2c.o soft_spi.o spartan2.o spartan3.o usb.o usb_kbd.o usb_storage.o virtex2.o xilinx.o crc16.o xyzModem.o cmd_mac.o cmd_onenand.o cmd_usbd.o cmd_movi.o
+r - main.o
+r - ACEX1K.o
+r - altera.o
+r - bedbug.o
+r - circbuf.o
+r - cmd_ace.o
+r - cmd_autoscript.o
+r - cmd_bdinfo.o
+r - cmd_bedbug.o
+r - cmd_bmp.o
+r - cmd_boot.o
+r - cmd_bootm.o
+r - cmd_cache.o
+r - cmd_console.o
+r - cmd_date.o
+r - cmd_dcr.o
+r - cmd_diag.o
+r - cmd_display.o
+r - cmd_doc.o
+r - cmd_dtt.o
+r - cmd_eeprom.o
+r - cmd_elf.o
+r - cmd_ext2.o
+r - cmd_fat.o
+r - cmd_fdc.o
+r - cmd_fdos.o
+r - cmd_flash.o
+r - cmd_fpga.o
+r - cmd_i2c.o
+r - cmd_ide.o
+r - cmd_immap.o
+r - cmd_itest.o
+r - cmd_jffs2.o
+r - cmd_load.o
+r - cmd_log.o
+r - cmd_mem.o
+r - cmd_mii.o
+r - cmd_misc.o
+r - cmd_mmc.o
+r - cmd_nand.o
+r - cmd_net.o
+r - cmd_nvedit.o
+r - cmd_pci.o
+r - cmd_pcmcia.o
+r - cmd_portio.o
+r - cmd_reginfo.o
+r - cmd_reiser.o
+r - cmd_scsi.o
+r - cmd_spi.o
+r - cmd_universe.o
+r - cmd_usb.o
+r - cmd_vfd.o
+r - command.o
+r - console.o
+r - cyclon2.o
+r - devices.o
+r - dlmalloc.o
+r - docecc.o
+r - environment.o
+r - env_common.o
+r - env_nand.o
+r - env_dataflash.o
+r - env_flash.o
+r - env_eeprom.o
+r - env_nvram.o
+r - env_nowhere.o
+r - env_movi.o
+r - env_onenand.o
+r - exports.o
+r - flash.o
+r - fpga.o
+r - ft_build.o
+r - hush.o
+r - kgdb.o
+r - lcd.o
+r - lists.o
+r - lynxkdi.o
+r - memsize.o
+r - miiphybb.o
+r - miiphyutil.o
+r - s_record.o
+r - serial.o
+r - soft_i2c.o
+r - soft_spi.o
+r - spartan2.o
+r - spartan3.o
+r - usb.o
+r - usb_kbd.o
+r - usb_storage.o
+r - virtex2.o
+r - xilinx.o
+r - crc16.o
+r - xyzModem.o
+r - cmd_mac.o
+r - cmd_onenand.o
+r - cmd_usbd.o
+r - cmd_movi.o
+make[1]: Leaving directory `/work/projects/s3c6410/u-boot-1.1.6_smdk6410/common'
+UNDEF_SYM=`arm-linux-objdump -x lib_generic/libgeneric.a board/samsung/smdk6410/libsmdk6410.a cpu/s3c64xx/libs3c64xx.a cpu/s3c64xx/s3c6410/libs3c6410.a lib_arm/libarm.a fs/cramfs/libcramfs.a fs/fat/libfat.a fs/fdos/libfdos.a fs/jffs2/libjffs2.a fs/reiserfs/libreiserfs.a fs/ext2/libext2fs.a net/libnet.a disk/libdisk.a rtc/librtc.a dtt/libdtt.a drivers/libdrivers.a drivers/nand/libnand.a drivers/nand_legacy/libnand_legacy.a drivers/onenand/libonenand.a drivers/sk98lin/libsk98lin.a post/libpost.a post/cpu/libcpu.a common/libcommon.a |sed  -n -e 's/.*\(__u_boot_cmd_.*\)/-u\1/p'|sort|uniq`;\
+		cd /work/projects/s3c6410/u-boot-1.1.6_smdk6410 && arm-linux-ld -Bstatic -T /work/projects/s3c6410/u-boot-1.1.6_smdk6410/board/samsung/smdk6410/u-boot.lds -Ttext 0x57e00000  $UNDEF_SYM cpu/s3c64xx/start.o \
+			--start-group lib_generic/libgeneric.a board/samsung/smdk6410/libsmdk6410.a cpu/s3c64xx/libs3c64xx.a cpu/s3c64xx/s3c6410/libs3c6410.a lib_arm/libarm.a fs/cramfs/libcramfs.a fs/fat/libfat.a fs/fdos/libfdos.a fs/jffs2/libjffs2.a fs/reiserfs/libreiserfs.a fs/ext2/libext2fs.a net/libnet.a disk/libdisk.a rtc/librtc.a dtt/libdtt.a drivers/libdrivers.a drivers/nand/libnand.a drivers/nand_legacy/libnand_legacy.a drivers/onenand/libonenand.a drivers/sk98lin/libsk98lin.a post/libpost.a post/cpu/libcpu.a common/libcommon.a --end-group -L /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5 -lgcc \
+			-Map u-boot.map -o u-boot
+arm-linux-objcopy --gap-fill=0xff -O srec u-boot u-boot.srec
+arm-linux-objcopy --gap-fill=0xff -O binary u-boot u-boot.bin
+arm-linux-objdump -D u-boot > u-boot.dis
